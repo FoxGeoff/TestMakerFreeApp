@@ -56,6 +56,20 @@ namespace TestMakerFreeWebApp.Controllers
                     Formatting = Formatting.Indented
                 });
         }
+
+        [HttpGet("Random/{num:int?}")]
+        public IActionResult Random(int num = 10)
+        {
+            var sampleQuizzes = ((JsonResult)Latest(num)).Value as List<QuizViewModel>;
+
+            return new JsonResult(
+                sampleQuizzes.OrderBy(t => Guid.NewGuid()),
+                new JsonSerializerSettings()
+                {
+                    Formatting = Formatting.Indented
+                });
+        }
+
     }
 }
 

@@ -19,12 +19,12 @@ namespace TestMakerFreeWebApp.Controllers
         {
             var sampleQuizzes = new List<QuizViewModel>();
             //add a first sample quiz
-            for (int i = 2; i < num; i++)
+            for (int i = 1; i < num; i++)
             {
                 sampleQuizzes.Add(new QuizViewModel()
                 {
-                    Id = 1,
-                    Title = @"Sample Quiz {i}",
+                    Id = i,
+                    Title = $"Sample Quiz {i}",
                     Description = "This is a quiz",
                     CreatedDate = DateTime.Now,
                     LastModifiedDate = DateTime.Now
